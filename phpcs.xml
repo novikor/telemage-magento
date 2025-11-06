@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset name="SimpleMagento2">
+    <description>Humanized version of Magento 2 coding standard</description>
+    <rule ref="Magento2">
+        <exclude name="Squiz.CSS"/>
+        <exclude name="Magento2.Less"/>
+        <exclude name="Magento2.GraphQL"/>
+        <exclude name="Magento2.Annotation.MethodAnnotationStructure.NoCommentBlock"/>
+        <exclude name="Magento2.Annotation.MethodAnnotationStructure"/>
+        <exclude name="Magento2.Commenting.ClassPropertyPHPDocFormatting"/>
+        <exclude name="PHPCompatibility.Classes.NewReadonlyClasses"/>
+    </rule>
+</ruleset>
