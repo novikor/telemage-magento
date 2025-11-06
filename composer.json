@@ -1,0 +1,20 @@
+{
+  "name": "novikor/module-telemage",
+  "version": "1.0.0",
+  "description": "N/A",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*"
+  },
+  "license": [
+    "GNU Affero General Public License (AGPL)"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Novikor\\Telemage\\": ""
+    }
+  }
+}
