@@ -1,20 +1,22 @@
 {
-  "name": "novikor/module-telemage",
-  "version": "1.0.0",
-  "description": "N/A",
-  "type": "magento2-module",
-  "require": {
-    "magento/framework": "*"
-  },
-  "license": [
-    "GNU Affero General Public License (AGPL)"
-  ],
-  "autoload": {
-    "files": [
-      "registration.php"
+    "name": "novikor/module-telemage",
+    "version": "1.0.0",
+    "description": "N/A",
+    "type": "magento2-module",
+    "require": {
+        "magento/framework": "*",
+        "spomky-labs/aes-key-wrap": "^7.0",
+        "web-token/jwt-framework": "^3.1"
+    },
+    "license": [
+        "GNU Affero General Public License (AGPL)"
     ],
-    "psr-4": {
-      "Novikor\\Telemage\\": ""
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Novikor\\Telemage\\": ""
+        }
     }
-  }
 }

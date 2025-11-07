@@ -5,6 +5,7 @@
         <exclude name="Squiz.CSS"/>
         <exclude name="Magento2.Less"/>
         <exclude name="Magento2.GraphQL"/>
+        <exclude name="Magento2.Annotation.MethodArguments"/>
         <exclude name="Magento2.Annotation.MethodAnnotationStructure.NoCommentBlock"/>
         <exclude name="Magento2.Annotation.MethodAnnotationStructure"/>
         <exclude name="Magento2.Commenting.ClassPropertyPHPDocFormatting"/>
