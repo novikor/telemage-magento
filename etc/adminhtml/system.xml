@@ -1,13 +1,10 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="novikor" translate="label" sortOrder="100">
-            <label>Novikor</label>
-        </tab>
         <section id="telemage" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
             <label>Telemage Integration</label>
-            <tab>novikor</tab>
+            <tab>service</tab>
             <resource>Novikor_Telemage::config</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
                 <label>General</label>
@@ -15,12 +12,13 @@
                     <label>Enable/Disable</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="bot_token" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="bot_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Telegram Bot Identifier</label>
-                    <validate>required-entry</validate>
+                    <validate>required-entry alphanumeric</validate>
                     <depends>
                         <field id="enabled">1</field>
                     </depends>
+                    <comment>Please provide your Telegram Bot ID (e.g., my_awesome_bot)</comment>
                 </field>
                 <field id="jwe_secret" translate="label" type="obscure" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>JWE secret</label>
@@ -29,6 +27,25 @@
                     <depends>
                         <field id="enabled">1</field>
                     </depends>
+                </field>
+            </group>
+            <group id="api" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>API Settings</label>
+                <field id="base_url" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Telemage Base URL</label>
+                    <validate>required-entry url</validate>
+                    <depends>
+                        <field id="telemage/general/enabled">1</field>
+                    </depends>
+                    <comment>Please specify the Telemage service Base URL</comment>
+                </field>
+                <field id="integration_url_token" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Telemage Integration URL Token</label>
+                    <validate>required-entry alphanumeric</validate>
+                    <depends>
+                        <field id="telemage/general/enabled">1</field>
+                    </depends>
+                    <comment>You can find it on an Integration page, "Webhook URL Token" field</comment>
                 </field>
             </group>
         </section>

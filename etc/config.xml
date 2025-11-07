@@ -4,6 +4,7 @@
         <telemage>
             <general>
                 <enabled>0</enabled>
+                <jwe_secret backend_model="Magento\Config\Model\Config\Backend\Encrypted"/>
             </general>
         </telemage>
     </default>

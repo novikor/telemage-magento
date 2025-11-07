@@ -1,0 +1,9 @@
+<?php
+/**
+ * @var \Magento\Framework\View\Element\Template $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+<a href="<?= $escaper->escapeUrl($block->getUrl('telemage/customer/redirect')) ?>" class="action primary" target="_blank">
+    <?= $escaper->escapeHtml(__('Connect Telegram')) ?>
+</a>
