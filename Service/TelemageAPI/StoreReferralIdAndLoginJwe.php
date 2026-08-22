@@ -6,6 +6,7 @@ namespace Novikor\Telemage\Service\TelemageAPI;
 use Magento\Framework\Exception\ConfigurationMismatchException;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Store\Model\StoreManagerInterface;
+use Random\Engine\Secure;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
@@ -29,7 +30,7 @@ readonly class StoreReferralIdAndLoginJwe
      */
     public function execute(string $jwe): string
     {
-        $referralId = uniqid();
+        $referralId = bin2hex((new Secure())->generate());
         $this->apiClientFlyweightFactory
             ->get($this->storeManager->getWebsite()->getId())
             ->storeReferral($referralId, $jwe);
