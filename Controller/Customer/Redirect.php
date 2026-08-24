@@ -33,7 +33,7 @@ class Redirect implements HttpGetActionInterface
         }
 
         try {
-            $botName = $this->config->getBotToken();
+            $botName = $this->config->getBotIdentifier();
             $jwe = $this->jweToken->generateForCustomer((int)$this->customerSession->getCustomerId());
             $referralId = $this->storeReferralIdAndLoginJwe->execute($jwe);
             $redirect->setUrl(sprintf('https://t.me/%s?start=%s', $botName, $referralId));

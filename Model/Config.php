@@ -31,7 +31,7 @@ class Config implements ConfigInterface
     }
 
     #[\Override]
-    public function getBotToken(int|string|null $websiteId = null): ?string
+    public function getBotIdentifier(int|string|null $websiteId = null): ?string
     {
         return $this->scopeConfig->getValue(
             self::XML_PATH_BOT_TOKEN,
@@ -74,7 +74,7 @@ class Config implements ConfigInterface
     public function isConfigured(int|string|null $websiteId = null): bool
     {
         return $this->isEnabled($websiteId)
-            && $this->getBotToken($websiteId)
+            && $this->getBotIdentifier($websiteId)
             && $this->getJweSecret($websiteId)
             && $this->getIntegrationUrlToken($websiteId)
             && $this->getApiBaseUrl($websiteId);
